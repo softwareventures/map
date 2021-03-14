@@ -25,3 +25,17 @@ export function fromAllEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Ma
     }
     return map;
 }
+
+export function fromFoldEntries<TKey, TValue, TFoldValue>(
+    entries: MapLike<TKey, TValue>,
+    f: (accumulator: TFoldValue, value: TValue, key: TKey) => TFoldValue,
+    initial: TFoldValue
+): Map<TKey, TFoldValue> {
+    const map = new Map<TKey, TFoldValue>();
+    for (const [key, value] of entries) {
+        // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+        const accumulator = map.has(key) ? map.get(key)! : initial;
+        map.set(key, f(accumulator, value, key));
+    }
+    return map;
+}

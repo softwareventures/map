@@ -1,5 +1,5 @@
 import test from "ava";
-import {fromAllEntries, fromFirstEntries, fromLastEntries} from "./index";
+import {fromAllEntries, fromFirstEntries, fromFoldEntries, fromLastEntries} from "./index";
 
 test("fromFirstEntries", t => {
     t.deepEqual(
@@ -45,6 +45,26 @@ test("fromAllEntries", t => {
         [
             ["a", [1, 3]],
             ["b", [2]]
+        ]
+    );
+});
+
+test("fromFoldEntries", t => {
+    t.deepEqual(
+        Array.from(
+            fromFoldEntries(
+                [
+                    ["a", 1],
+                    ["b", 2],
+                    ["a", 3]
+                ],
+                (a, n) => a + n,
+                0
+            )
+        ),
+        [
+            ["a", 4],
+            ["b", 2]
         ]
     );
 });
