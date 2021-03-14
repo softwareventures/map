@@ -39,3 +39,7 @@ export function mapOfFoldEntries<TKey, TValue, TFoldValue>(
     }
     return map;
 }
+
+export function entries<TKey, TValue>(map: ReadonlyMap<TKey, TValue>): Iterable<[TKey, TValue]> {
+    return map.entries();
+}
