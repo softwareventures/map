@@ -314,10 +314,10 @@
     tslib "^1.11.2 || ^2.0.0"
     tslint "^6.1.2"
 
-"@softwareventures/iterable@^1.0.0":
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/@softwareventures/iterable/-/iterable-1.0.0.tgz#cab204ffee616dd6f7fa6e4c4d50c0aa5957f63b"
-  integrity sha512-PjOEzwDTEVSCh52SLxbjV6bBErZRGZXf5sbsV0vHJtkLzg52UHV7o96byJXPNY+CPznpHLcmG3v43Qefr1mavg==
+"@softwareventures/iterable@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@softwareventures/iterable/-/iterable-1.0.1.tgz#c579fa92dcbfb72a2734f6027c6aafe0c0f5ae17"
+  integrity sha512-tlHzB1DXttvr48GmyQ1+YX98AuAq6ALRh07JMzWxJpZFtfcf+A8riK/o5oYjobCxynX/V+Eom/sInLI0ZKN9FQ==
   dependencies:
     "@softwareventures/nullable" "^1.0.0"
     "@softwareventures/ordered" "^0.2.2"
