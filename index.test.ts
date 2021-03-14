@@ -1,5 +1,5 @@
 import test from "ava";
-import {fromAllEntries, mapOfFirstEntries, fromFoldEntries, fromLastEntries} from "./index";
+import {fromAllEntries, mapOfFirstEntries, fromFoldEntries, mapOfLastEntries} from "./index";
 
 test("mapOfFirstEntries", t => {
     t.deepEqual(
@@ -17,10 +17,10 @@ test("mapOfFirstEntries", t => {
     );
 });
 
-test("fromLastEntries", t => {
+test("mapOfLastEntries", t => {
     t.deepEqual(
         Array.from(
-            fromLastEntries([
+            mapOfLastEntries([
                 ["a", 1],
                 ["b", 2],
                 ["a", 3]
