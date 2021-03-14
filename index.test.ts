@@ -4,7 +4,8 @@ import {
     mapOfAllEntries,
     mapOfFirstEntries,
     mapOfFoldEntries,
-    mapOfLastEntries
+    mapOfLastEntries,
+    values
 } from "./index";
 
 test("mapOfFirstEntries", t => {
@@ -97,5 +98,30 @@ test("keys", t => {
             ])
         ),
         ["a", "b", "a"]
+    );
+});
+
+test("values", t => {
+    t.deepEqual(
+        Array.from(
+            values(
+                new Map([
+                    ["a", 1],
+                    ["b", 2],
+                    ["a", 3]
+                ])
+            )
+        ),
+        [3, 2]
+    );
+    t.deepEqual(
+        Array.from(
+            values([
+                ["a", 1],
+                ["b", 2],
+                ["a", 3]
+            ])
+        ),
+        [1, 2, 3]
     );
 });

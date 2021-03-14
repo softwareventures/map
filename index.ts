@@ -49,3 +49,7 @@ export function entries<TKey, TValue>(map: ReadonlyMap<TKey, TValue>): Iterable<
 export function keys<TKey, TValue>(map: MapLike<TKey, TValue>): Iterable<TKey> {
     return map instanceof Map ? map.keys() : mapIterable(map, ([key]) => key);
 }
+
+export function values<TKey, TValue>(map: MapLike<TKey, TValue>): Iterable<TValue> {
+    return map instanceof Map ? map.values() : mapIterable(map, ([_, value]) => value);
+}
