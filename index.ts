@@ -1,3 +1,5 @@
+import {map as mapIterable} from "@softwareventures/iterable";
+
 export type MapLike<TKey, TValue> = Iterable<[TKey, TValue]>;
 
 export function mapOfFirstEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Map<TKey, TValue> {
@@ -42,4 +44,8 @@ export function mapOfFoldEntries<TKey, TValue, TFoldValue>(
 
 export function entries<TKey, TValue>(map: ReadonlyMap<TKey, TValue>): Iterable<[TKey, TValue]> {
     return map.entries();
+}
+
+export function keys<TKey, TValue>(map: MapLike<TKey, TValue>): Iterable<TKey> {
+    return map instanceof Map ? map.keys() : mapIterable(map, ([key]) => key);
 }

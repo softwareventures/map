@@ -1,5 +1,11 @@
 import test from "ava";
-import {mapOfAllEntries, mapOfFirstEntries, mapOfFoldEntries, mapOfLastEntries} from "./index";
+import {
+    keys,
+    mapOfAllEntries,
+    mapOfFirstEntries,
+    mapOfFoldEntries,
+    mapOfLastEntries
+} from "./index";
 
 test("mapOfFirstEntries", t => {
     t.deepEqual(
@@ -66,5 +72,30 @@ test("mapOfFoldEntries", t => {
             ["a", 4],
             ["b", 2]
         ]
+    );
+});
+
+test("keys", t => {
+    t.deepEqual(
+        Array.from(
+            keys(
+                new Map([
+                    ["a", 1],
+                    ["b", 2],
+                    ["a", 3]
+                ])
+            )
+        ),
+        ["a", "b"]
+    );
+    t.deepEqual(
+        Array.from(
+            keys([
+                ["a", 1],
+                ["b", 2],
+                ["a", 3]
+            ])
+        ),
+        ["a", "b", "a"]
     );
 });
