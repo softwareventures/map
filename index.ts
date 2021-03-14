@@ -9,3 +9,7 @@ export function fromFirstEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): 
     }
     return map;
 }
+
+export function fromLastEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Map<TKey, TValue> {
+    return new Map(entries);
+}

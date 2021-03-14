@@ -1,5 +1,5 @@
 import test from "ava";
-import {fromFirstEntries} from "./index";
+import {fromFirstEntries, fromLastEntries} from "./index";
 
 test("fromFirstEntries", t => {
     t.deepEqual(
@@ -9,6 +9,22 @@ test("fromFirstEntries", t => {
         ],
         Array.from(
             fromFirstEntries([
+                ["a", 1],
+                ["b", 2],
+                ["a", 3]
+            ])
+        )
+    );
+});
+
+test("fromLastEntries", t => {
+    t.deepEqual(
+        [
+            ["a", 3],
+            ["b", 2]
+        ],
+        Array.from(
+            fromLastEntries([
                 ["a", 1],
                 ["b", 2],
                 ["a", 3]
