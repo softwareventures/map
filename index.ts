@@ -2,6 +2,12 @@ import {map as mapIterable} from "@softwareventures/iterable";
 
 export type MapLike<TKey, TValue> = Iterable<[TKey, TValue]>;
 
+export function isMap<TKey, TValue>(
+    value: MapLike<TKey, TValue> | {} | null | undefined
+): value is Map<TKey, TValue> {
+    return value instanceof Map;
+}
+
 export function mapOfFirstEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Map<TKey, TValue> {
     const map = new Map<TKey, TValue>();
     for (const [key, value] of entries) {

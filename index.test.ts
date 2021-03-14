@@ -1,5 +1,7 @@
 import test from "ava";
+import {expectType} from "ts-expect";
 import {
+    isMap,
     keys,
     mapOfAllEntries,
     mapOfFirstEntries,
@@ -7,6 +9,24 @@ import {
     mapOfLastEntries,
     values
 } from "./index";
+
+test("isMap", t => {
+    const array: Array<[string, number]> = [
+        ["a", 1],
+        ["b", 2],
+        ["a", 3]
+    ];
+    const iterable: Iterable<[string, number]> = new Map(array);
+    t.false(isMap(undefined));
+    t.false(isMap(null));
+    t.false(isMap("hello"));
+    t.false(isMap(1));
+    t.false(isMap(array));
+    t.true(isMap(iterable));
+    if (isMap(iterable)) {
+        expectType<Map<string, number>>(iterable);
+    }
+});
 
 test("mapOfFirstEntries", t => {
     t.deepEqual(
