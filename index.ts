@@ -26,7 +26,7 @@ export function mapOfAllEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): M
     return map;
 }
 
-export function fromFoldEntries<TKey, TValue, TFoldValue>(
+export function mapOfFoldEntries<TKey, TValue, TFoldValue>(
     entries: MapLike<TKey, TValue>,
     f: (accumulator: TFoldValue, value: TValue, key: TKey) => TFoldValue,
     initial: TFoldValue
