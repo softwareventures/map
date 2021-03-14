@@ -14,7 +14,7 @@ export function mapOfLastEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): 
     return new Map(entries);
 }
 
-export function fromAllEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Map<TKey, TValue[]> {
+export function mapOfAllEntries<TKey, TValue>(entries: MapLike<TKey, TValue>): Map<TKey, TValue[]> {
     const map = new Map<TKey, TValue[]>();
     for (const [key, value] of entries) {
         const values = map.get(key) ?? [];
