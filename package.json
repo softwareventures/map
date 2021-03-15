@@ -2,7 +2,7 @@
   "private": true,
   "name": "@softwareventures/map",
   "version": "0.0.0-development",
-  "description": "Pure functional Map traversal",
+  "description": "Pure functional Map construction and traversal",
   "keywords": [
     "lambda",
     "TypeScript",
