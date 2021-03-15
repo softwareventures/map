@@ -48,6 +48,13 @@ export function mapOfFoldEntries<TKey, TValue, TFoldValue>(
     return map;
 }
 
+export function mapOfFoldEntriesFn<TKey, TValue, TFoldValue>(
+    f: (accumulator: TFoldValue, value: TValue, key: TKey) => TFoldValue,
+    initial: TFoldValue
+): (entries: MapLike<TKey, TValue>) => Map<TKey, TFoldValue> {
+    return entries => mapOfFoldEntries(entries, f, initial);
+}
+
 export function entries<TKey, TValue>(map: ReadonlyMap<TKey, TValue>): Iterable<[TKey, TValue]> {
     return map.entries();
 }
