@@ -73,3 +73,9 @@ export function mapValues<TKey, TValue, TNewValue>(
 ): Map<TKey, TNewValue> {
     return new Map(mapIterable(map, ([key, value]) => [key, f(value, key)]));
 }
+
+export function mapValuesFn<TKey, TValue, TNewValue>(
+    f: (value: TValue, key: TKey) => TNewValue
+): (map: ReadonlyMap<TKey, TValue>) => Map<TKey, TNewValue> {
+    return map => mapValues(map, f);
+}
