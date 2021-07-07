@@ -3,10 +3,10 @@
   "version": "0.0.0-development",
   "description": "Pure functional Map construction and traversal",
   "keywords": [
-    "lambda",
+    "Map",
     "TypeScript",
     "functional",
-    "Map"
+    "lambda"
   ],
   "author": "Daniel Cassidy <mail@danielcassidy.me.uk>",
   "homepage": "https://github.com/softwareventures/map",
