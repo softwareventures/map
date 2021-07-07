@@ -21,6 +21,9 @@
     "test": "ava"
   },
   "sideEffects": false,
+  "engines": {
+    "node": "^12 || ^14 || >=16"
+  },
   "dependencies": {
     "@softwareventures/iterable": "^1.0.1 || ^1.1.1",
     "tslib": "2.3.0"
