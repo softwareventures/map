@@ -25,7 +25,7 @@
     "node": "^14 || ^16 || >=18"
   },
   "dependencies": {
-    "@softwareventures/iterable": "^1.0.1 || ^1.1.1 || ^2.0.0",
+    "@softwareventures/iterable": "^1.0.1 || ^1.1.1 || ^2.0.0 || ^3.0.0",
     "tslib": "2.4.1"
   },
   "devDependencies": {
