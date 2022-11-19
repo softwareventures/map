@@ -3,6 +3,7 @@ import {map as mapIterable} from "@softwareventures/iterable";
 export type MapLike<TKey, TValue> = Iterable<[TKey, TValue]>;
 
 export function isMap<TKey, TValue>(
+    // eslint-disable-next-line @typescript-eslint/ban-types
     value: MapLike<TKey, TValue> | {} | null | undefined
 ): value is Map<TKey, TValue> {
     return value instanceof Map;
